@@ -1,0 +1,66 @@
+/* This stylesheet has precedence over bootstrap. We'll use this to modify some bootstrap styles and add custom css. */
+
+/* Declare some global color scheming variables. Root is used to ensure global scope */
+:root {
+    --beige: #f5f0dc;
+}
+
+/* Position the hackclub logo using absolute positioning*/
+.hackclub-logo {
+    position: absolute;
+    top: 0;
+}
+.github-logo {
+    margin-left: 56px;
+}
+.github-logo:hover,
+.github-logo:focus {
+    fill: gray;
+}
+
+.spacer {
+    width: 106px;
+    height: 50px;
+}
+
+.nav-text {
+    font-size: 1.5em;
+}
+
+.navbar {
+    background-color: var(--beige);
+}
+
+.snake-container {
+    background-color: var(--beige);
+    border-radius: 20px;
+    padding: 30px;
+    padding-top: 0;
+    margin-top: 10px;
+}
+/* Remove bootstrap padding */
+.snake-canvas {
+    padding: 0;
+    background-color: white;
+}
+.play-button-img {
+}
+.snake-header {
+    padding: 10px 0px;
+}
+.play-button,
+.play-button:hover,
+.play-button:active,
+.play-button:visited,
+.play-button:focus {
+    padding: 6px 16px;
+    background-color: #dbdbdb;
+    border-color: #dbdbdb;
+}
+.play-button:hover {
+    background-color: #cccccc;
+}
+
+.stats {
+    visibility: hidden;
+}
