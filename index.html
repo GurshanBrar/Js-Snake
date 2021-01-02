@@ -7,6 +7,10 @@
         <!-- Recommended meta tags -->
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+            name="description"
+            content="A rainbow snake game made with HTML, CSS, and Javascript. Also includes sound effects!"
+        />
 
         <!-- Add bootstrap 4.5 -->
         <link
@@ -25,18 +29,27 @@
         <!-- Starting off with a simple nav header... -->
         <nav class="navbar">
             <!-- A container to center align elements inside it -->
-            <a class="hackclub-logo" href="https://workshops.hackclub.com">
+            <a
+                class="hackclub-logo"
+                href="https://workshops.hackclub.com"
+                aria-label="hackclub's website"
+            >
                 <img
                     src="https://assets.hackclub.com/flag-orpheus-top.svg"
                     height="60"
+                    alt=""
                 />
             </a>
             <div class="spacer"></div>
             <span class="nav-text font-weight-light my-2 mx-auto"
                 >Javascript Snake</span
             >
-            <a class="github-logo" href="#">
-                <svg width="50" height="50" viewBox="0 0 16 16">
+            <a
+                class="github-logo"
+                href="https://www.github.com/gurshanbrar/js-snake"
+                aria-label="my github"
+            >
+                <svg width="50" height="50" viewBox="0 0 16 16" alt="">
                     <path
                         fill-rule="evenodd"
                         d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
@@ -45,37 +58,43 @@
             </a>
         </nav>
         <!-- Lets add our snake game's container -->
-        <div id="snake-container" class="snake-container container">
-            <div
-                class="d-flex justify-content-around align-items-center snake-header"
-            >
-                <span class="stats" id="score">Score: 0</span>
-                <button type="button" class="btn btn-secondary play-button">
-                    <svg
-                        width="25px"
-                        height="25px"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="feather feather-play"
+        <main>
+            <div id="snake-container" class="snake-container container">
+                <div
+                    class="d-flex justify-content-around align-items-center snake-header"
+                >
+                    <span class="stats" id="score">Score: 0</span>
+                    <button
+                        type="button"
+                        class="btn btn-secondary play-button"
+                        aria-label="Play Button"
                     >
-                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                    </svg>
-                </button>
-                <span class="stats" id="length">Length: 1</span>
+                        <svg
+                            width="25px"
+                            height="25px"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="feather feather-play"
+                        >
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                    </button>
+                    <span class="stats" id="length">Length: 1</span>
+                </div>
+                <!-- Now an html canvas element. We can set the height using Javascript later on -->
+                <canvas
+                    class="snake-canvas container-fluid"
+                    id="snake-canvas"
+                    width="0"
+                    height="0"
+                ></canvas>
             </div>
-            <!-- Now an html canvas element. We can set the height using Javascript later on -->
-            <canvas
-                class="snake-canvas container-fluid"
-                id="snake-canvas"
-                width="0"
-                height="0"
-            ></canvas>
-        </div>
+        </main>
         <!-- Bootstrap's required scripts -->
         <script
             src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
